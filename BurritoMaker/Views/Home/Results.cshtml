@@ -1,0 +1,68 @@
+﻿@model Recipe
+
+@{
+    ViewData["Title"] = "Recipes";
+}
+<h1>Creations</h1>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-controller="Home" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Username" class="control-label"></label>
+                <input name="Username" asp-for="Username" class="form-control">
+
+                <span asp-validation-for="Username" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BurritoName" class="control-label"></label>
+                <input name="BurritoName" asp-for="BurritoName" class="form-control">
+                <span asp-validation-for="BurritoName" class="text-danger"></span>
+            </div>
+            <button type="submit" class="btn btn-info">Submit</button>
+        </form>
+    </div>
+</div>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+<div class="row justify-content-center col-8 m-auto">
+    <div class="col-auto">
+        <table class="table table-responsive">
+            <thead>
+                <tr>
+                    <th>Username</th>
+                    <th>BurritoName</th>
+                    <th>Tortilla</th>
+                    <th>Sauce</th>
+                    <th>Rice</th>
+                    <th>Beans</th>
+                    <th>Meat</th>
+                    <th>Cheese</th>
+                    <th>Veg1</th>
+                    <th>Veg2</th>
+                    <th>CreatedDate</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var recipe in ViewBag.recipes)
+                {
+                <tr>
+                    <td>@recipe.Username</td>
+                    <td>@recipe.BurritoName</td>
+                    <td>@recipe.Tortilla</td>
+                    <td>@recipe.Sauce</td>
+                    <td>@recipe.Rice</td>
+                    <td>@recipe.Beans</td>
+                    <td>@recipe.Meat</td>
+                    <td>@recipe.Cheese</td>
+                    <td>@recipe.Veg1</td>
+                    <td>@recipe.Veg2</td>
+                    <td>@recipe.CreatedDate</td>
+                </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
