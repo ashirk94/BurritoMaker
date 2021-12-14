@@ -1,0 +1,89 @@
+﻿@model BurritoMaker.Models.Recipe
+
+@{
+    ViewData["Title"] = "ViewRecipe";
+}
+<style type="text/css">
+    .dl, .dt {
+        text-align: center;
+    }
+</style>
+<div class="text-center">
+
+    <h1>View Recipe</h1>
+
+    <div>
+        <hr />
+        <dl class="row justify-content-center">
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Username)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Username)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.BurritoName)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.BurritoName)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.CreatedDate)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.CreatedDate)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Tortilla)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Tortilla)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Sauce)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Sauce)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Rice)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Rice)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Beans)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Beans)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Meat)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Meat)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Cheese)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Cheese)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Veg1)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Veg1)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Veg2)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Veg2)
+            </dd>
+        </dl>
+    </div>
+    <div>
+        <a asp-controller="Recipes" asp-action="Index">Back to List</a>
+    </div>
+</div>

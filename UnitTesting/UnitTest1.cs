@@ -43,7 +43,7 @@ namespace UnitTesting
             };
 
             controller = new HomeController(repo.Object);
-            var result = controller.TortillaSauce(recipe);
+            var result = controller.CreateBurrito(recipe);
 
             Assert.IsType<ViewResult>(result);
         }

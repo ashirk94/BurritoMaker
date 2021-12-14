@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 
@@ -19,7 +20,10 @@ namespace BurritoMaker.Models
         {
             return context.Recipes;
         }
-
+        public IQueryable<Recipe> GetQueryables()
+        {
+            return context.Recipes.AsQueryable();
+        }
         public Recipe GetById(int id)
         {
             return context.Recipes.Find(id);
@@ -38,12 +42,19 @@ namespace BurritoMaker.Models
 
         public void Update(Recipe recipe)
         {
+            context.Recipes.Attach(recipe);
             context.Entry(recipe).State = EntityState.Modified;
+            context.SaveChanges();
         }
 
         public void Save()
         {
             context.SaveChanges();
+        }
+
+        public IEnumerable<Recipe> Search(Expression<Func<Recipe, bool>> predicate)
+        {
+            return context.Recipes.Where(predicate).ToList();
         }
     }
 }

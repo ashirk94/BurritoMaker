@@ -6,6 +6,11 @@
     <title>@ViewData["Title"] - BurritoMaker</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
+    <style type="text/css">
+        body {
+            background: lightgrey !important;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -22,7 +27,10 @@
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Results">Creations</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Recipes" asp-action="Index">Creations</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Recipes" asp-action="Search">Search</a>
                         </li>
                     </ul>
                 </div>

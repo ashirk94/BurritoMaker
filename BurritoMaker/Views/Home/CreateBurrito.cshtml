@@ -1,0 +1,108 @@
+﻿@model BurritoMaker.Models.Recipe
+
+@{
+    ViewData["Title"] = "Create Burrito";
+}
+<div class="text-center">
+
+    <h1>Create a Burrito</h1>
+    <hr />
+    <div class="row justify-content-center">
+        <div class="col-md-4">
+            <form asp-controller="Home" method="post">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="Tortilla" class="control-label"></label>
+                    <select name="Tortilla" asp-for="Tortilla" class="form-control" id="Tortilla">
+                        <option value="Corn">Corn</option>
+                        <option value="Rice">Rice</option>
+                        <option value="Flour">Flour</option>
+                    </select>
+                    <span asp-validation-for="Tortilla" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Sauce" class="control-label"></label>
+                    <select name="Sauce" asp-for="Sauce" class="form-control">
+                        <option value="Chipotle">Chipotle</option>
+                        <option value="Green">Green</option>
+                        <option value="Barbeque">Barbeque</option>
+                    </select>
+                    <span asp-validation-for="Sauce" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Rice" class="control-label"></label>
+                    <select name="Rice" asp-for="Rice" class="form-control">
+                        <option value="White">White</option>
+                        <option value="Brown">Brown</option>
+                    </select>
+                    <span asp-validation-for="Rice" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Beans" class="control-label"></label>
+                    <select name="Beans" asp-for="Beans" class="form-control">
+                        <option value="Refried">Refried</option>
+                        <option value="Pinto">Pinto</option>
+                        <option value="Black">Black</option>
+                    </select>
+                    <span asp-validation-for="Beans" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Meat" class="control-label"></label>
+                    <select name="Meat" asp-for="Meat" class="form-control">
+                        <option value="Chicken">Chicken</option>
+                        <option value="Beef">Beef</option>
+                        <option value="Pork">Pork</option>
+                        <option value="Tofu">Tofu</option>
+                    </select>
+                    <span asp-validation-for="Meat" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Cheese" class="control-label"></label>
+                    <select name="Cheese" asp-for="Cheese" class="form-control">
+                        <option value="Cheddar">Cheddar</option>
+                        <option value="Nacho">Nacho(liquid)</option>
+                        <option value="Monterey Jack">Monterey Jack</option>
+                    </select>
+                    <span asp-validation-for="Cheese" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Veg1" class="control-label"></label>
+                    <select name="Veg1" asp-for="Veg1" class="form-control">
+                        <option value="Mushrooms">Mushrooms</option>
+                        <option value="Lettuce">Lettuce</option>
+                        <option value="Tomato">Tomato</option>
+                        <option value="Green Pepper">Green Pepper</option>
+                    </select>
+
+                    <span asp-validation-for="Veg1" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Veg2" class="control-label"></label>
+                    <select name="Veg2" asp-for="Veg2" class="form-control">
+                        <option value="Spinach">Spinach</option>
+                        <option value="Avocado">Avocado</option>
+                        <option value="Apple">Apple</option>
+                        <option value="Potato">Potato</option>
+                    </select>
+                    <span asp-validation-for="Veg2" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Username" class="control-label"></label>
+                    <input name="Username" asp-for="Username" class="form-control">
+
+                    <span asp-validation-for="Username" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="BurritoName" class="control-label"></label>
+                    <input name="BurritoName" asp-for="BurritoName" class="form-control">
+                    <span asp-validation-for="BurritoName" class="text-danger"></span>
+                </div>
+                <button type="submit" class="btn btn-info">Submit</button>
+            </form>
+        </div>
+    </div>
+    <br />
+</div>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

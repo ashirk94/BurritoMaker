@@ -1,0 +1,52 @@
+﻿@model Recipe
+
+@{
+    ViewData["Title"] = "Recipes";
+}
+<div class="text-center">
+    <h1>Creations</h1>
+    <hr />
+    <div class="row justify-content-center col-12 m-auto">
+        <div class="col-auto">
+            <table class="table table-responsive">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Username</th>
+                        <th>BurritoName</th>
+                        <th>CreatedDate</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var recipe in ViewBag.recipes)
+                    {
+                        <tr>
+                            <td>@recipe.Id</td>
+                            <td>@recipe.Username</td>
+                            <td>@recipe.BurritoName</td>
+                            <td>@recipe.CreatedDate</td>
+                            <td>
+                                <a asp-controller="Recipes" asp-action="DeleteRecipe"
+                                   asp-route-id="@recipe.Id">
+                                    Delete
+                                </a>
+                            </td>
+                            <td>
+                                <a asp-controller="Recipes" asp-action="EditRecipe"
+                                   asp-route-id="@recipe.Id">
+                                    Edit
+                                </a>
+                            </td>
+                            <td>
+                                <a asp-controller="Recipes" asp-action="ViewRecipe"
+                                   asp-route-id="@recipe.Id">
+                                    View
+                                </a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+    </div>
